@@ -1,0 +1,42 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contoso.LegacyBank.Accounts.Contracts", "src\Contoso.LegacyBank.Accounts.Contracts\Contoso.LegacyBank.Accounts.Contracts.csproj", "{2F938B02-442A-421B-A911-3D29E41E70D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contoso.LegacyBank.Accounts.Data", "src\Contoso.LegacyBank.Accounts.Data\Contoso.LegacyBank.Accounts.Data.csproj", "{AE13B1E5-274B-48CB-B40A-956304864202}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contoso.LegacyBank.Accounts.Business", "src\Contoso.LegacyBank.Accounts.Business\Contoso.LegacyBank.Accounts.Business.csproj", "{AB507498-01AB-492E-976D-8CF49E27B02D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contoso.LegacyBank.Accounts.ServiceHost", "src\Contoso.LegacyBank.Accounts.ServiceHost\Contoso.LegacyBank.Accounts.ServiceHost.csproj", "{AC60F562-D646-4AD0-B8C5-D7E2D5382908}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contoso.LegacyBank.Accounts.Tests", "tests\Contoso.LegacyBank.Accounts.Tests\Contoso.LegacyBank.Accounts.Tests.csproj", "{D4E1A0A4-EC42-4A5E-BBEA-9B829D778248}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2F938B02-442A-421B-A911-3D29E41E70D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F938B02-442A-421B-A911-3D29E41E70D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F938B02-442A-421B-A911-3D29E41E70D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F938B02-442A-421B-A911-3D29E41E70D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE13B1E5-274B-48CB-B40A-956304864202}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE13B1E5-274B-48CB-B40A-956304864202}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE13B1E5-274B-48CB-B40A-956304864202}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE13B1E5-274B-48CB-B40A-956304864202}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB507498-01AB-492E-976D-8CF49E27B02D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB507498-01AB-492E-976D-8CF49E27B02D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB507498-01AB-492E-976D-8CF49E27B02D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB507498-01AB-492E-976D-8CF49E27B02D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC60F562-D646-4AD0-B8C5-D7E2D5382908}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC60F562-D646-4AD0-B8C5-D7E2D5382908}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC60F562-D646-4AD0-B8C5-D7E2D5382908}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC60F562-D646-4AD0-B8C5-D7E2D5382908}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4E1A0A4-EC42-4A5E-BBEA-9B829D778248}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4E1A0A4-EC42-4A5E-BBEA-9B829D778248}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4E1A0A4-EC42-4A5E-BBEA-9B829D778248}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4E1A0A4-EC42-4A5E-BBEA-9B829D778248}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

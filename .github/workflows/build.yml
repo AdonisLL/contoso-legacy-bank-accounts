@@ -1,0 +1,25 @@
+name: build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build-test:
+    runs-on: windows-2022
+    steps:
+      - uses: actions/checkout@v4
+      - uses: microsoft/setup-msbuild@v2
+      - uses: NuGet/setup-nuget@v2
+        with:
+          nuget-version: 6.x
+      - name: Restore
+        run: nuget restore .\Contoso.LegacyBank.Accounts.sln -PackagesDirectory .\packages -NonInteractive
+      - name: Build
+        run: msbuild .\Contoso.LegacyBank.Accounts.sln /m /p:Configuration=Release /p:ContinuousIntegrationBuild=true
+      - name: Test
+        run: .\packages\NUnit.ConsoleRunner.3.18.3\tools\nunit3-console.exe .\tests\Contoso.LegacyBank.Accounts.Tests\bin\Release\Contoso.LegacyBank.Accounts.Tests.dll --result=TestResult.xml

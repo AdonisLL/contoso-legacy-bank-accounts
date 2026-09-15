@@ -1,0 +1,9 @@
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup><Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration><Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform><ProjectGuid>{AE13B1E5-274B-48CB-B40A-956304864202}</ProjectGuid><OutputType>Library</OutputType><RootNamespace>Contoso.LegacyBank.Accounts.Data</RootNamespace><AssemblyName>Contoso.LegacyBank.Accounts.Data</AssemblyName><TargetFrameworkVersion>v4.8</TargetFrameworkVersion><FileAlignment>512</FileAlignment><AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects></PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'"><DebugSymbols>true</DebugSymbols><DebugType>full</DebugType><Optimize>false</Optimize><OutputPath>bin\Debug\</OutputPath><DefineConstants>DEBUG;TRACE</DefineConstants></PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'"><DebugType>pdbonly</DebugType><Optimize>true</Optimize><OutputPath>bin\Release\</OutputPath><DefineConstants>TRACE</DefineConstants></PropertyGroup>
+  <ItemGroup><Reference Include="EntityFramework"><HintPath>..\..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.dll</HintPath><Private>True</Private></Reference><Reference Include="EntityFramework.SqlServer"><HintPath>..\..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll</HintPath><Private>True</Private></Reference><Reference Include="System" /><Reference Include="System.ComponentModel.DataAnnotations" /><Reference Include="System.Core" /><Reference Include="System.Data" /></ItemGroup>
+  <ItemGroup><Compile Include="AccountData.cs" /><Compile Include="Properties\AssemblyInfo.cs" /></ItemGroup>
+  <ItemGroup><None Include="packages.config" /></ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
