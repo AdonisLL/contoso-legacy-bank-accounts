@@ -1,5 +1,6 @@
 using System;
 using System.ServiceModel;
+using System.Threading;
 using Contoso.LegacyBank.Accounts.Data;
 
 namespace Contoso.LegacyBank.Accounts.ServiceHost
@@ -18,8 +19,24 @@ namespace Contoso.LegacyBank.Accounts.ServiceHost
                 {
                     host.Open();
                     Console.WriteLine("AccountService listening at http://localhost:8090/AccountService");
-                    Console.WriteLine("Press ENTER to stop.");
-                    Console.ReadLine();
+                    if (HasArgument(args, "--noninteractive"))
+                    {
+                        using (var stopped = new ManualResetEvent(false))
+                        {
+                            Console.CancelKeyPress += (sender, eventArgs) =>
+                            {
+                                eventArgs.Cancel = true;
+                                stopped.Set();
+                            };
+                            Console.WriteLine("Press Ctrl+C to stop.");
+                            stopped.WaitOne();
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Press ENTER to stop.");
+                        Console.ReadLine();
+                    }
                     host.Close();
                 }
                 catch

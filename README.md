@@ -39,6 +39,7 @@ Seed identifiers include customers `CUST-1001` and `CUST-1002`, and accounts `CH
 ```
 
 The SOAP endpoint is `http://localhost:8090/AccountService` and metadata is available at `http://localhost:8090/AccountService?wsdl`. Press Enter to stop.
+Use `--noninteractive` when a script or process supervisor starts the host; it remains active until Ctrl+C or process termination.
 
 Operations:
 
