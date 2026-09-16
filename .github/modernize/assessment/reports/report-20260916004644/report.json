@@ -589,7 +589,7 @@
     {
       "id": "CWE-778",
       "title": "Insufficient Logging",
-      "category": "Credentials & Secrets",
+      "category": "Security Monitoring",
       "severity": "potential",
       "description": "When a security-critical event occurs, the product either does not record the event or omits important details about the event when logging it.",
       "evidence": {
