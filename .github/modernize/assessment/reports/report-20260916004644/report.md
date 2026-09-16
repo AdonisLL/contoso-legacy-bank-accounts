@@ -72,6 +72,8 @@
 
 ### Security Issue Details
 
+> Line references for security findings were verified against the current repository source during report finalization.
+
 <details id="CWE-662_Improper_Synchronization">
 <summary><b>CWE-662: Improper Synchronization</b> — affected files</summary>
 

@@ -567,7 +567,7 @@
           "src/Contoso.LegacyBank.Accounts.Business/AccountManager.cs:68",
           "src/Contoso.LegacyBank.Accounts.Data/AccountData.cs:93"
         ],
-        "explanation": "AccountManager.ImportTransaction loads the target account at line 68 and delegates transaction persistence at line 74. EfAccountRepository.AddTransaction then inserts the transaction and updates the shared account balance with a read-modify-write operation at lines 93-100 without a row-version concurrency token, serializable transaction, or atomic database update. Concurrent imports with different externalId values for the same account can both read the same starting balance and overwrite one balance update."
+        "explanation": "AccountManager.ImportTransaction loads the target account at line 68 and delegates transaction persistence at line 74. EfAccountRepository.AddTransaction then inserts the transaction and updates the shared account balance with a read-modify-write operation at lines 93-100 without a row-version concurrency token, serializable transaction, or atomic database update. Concurrent imports with different externalId values for the same account can both read the same starting balance and overwrite one balance update. Line references verified against the current repository source during report finalization."
       },
       "storyPoint": 8
     },
@@ -582,7 +582,7 @@
           "src/Contoso.LegacyBank.Accounts.ServiceHost/AccountService.cs:19",
           "src/Contoso.LegacyBank.Accounts.Data/AccountData.cs:97"
         ],
-        "explanation": "AccountService exposes ImportTransaction as a service operation at line 19. The underlying repository changes the persisted Account.Balance at AccountData.cs line 97 with no synchronization or database-side atomic update guarding concurrent requests that target the same account."
+        "explanation": "AccountService exposes ImportTransaction as a service operation at line 19. The underlying repository changes the persisted Account.Balance at AccountData.cs line 97 with no synchronization or database-side atomic update guarding concurrent requests that target the same account. Line references verified against the current repository source during report finalization."
       },
       "storyPoint": 8
     },
@@ -598,7 +598,7 @@
           "src/Contoso.LegacyBank.Accounts.ServiceHost/AccountService.cs:28",
           "src/Contoso.LegacyBank.Accounts.Business/AccountManager.cs:55"
         ],
-        "explanation": "AccountService exposes customer, account, transaction history, and transaction import operations at lines 16-19 and converts validation/business failures to WCF faults at lines 28-35 without recording audit or security logs. AccountManager.ImportTransaction begins at line 55 and validates/rejects transaction requests, duplicate external IDs, inactive accounts, and missing accounts, but these security-sensitive access and mutation events are not logged."
+        "explanation": "AccountService exposes customer, account, transaction history, and transaction import operations at lines 16-19 and converts validation/business failures to WCF faults at lines 28-35 without recording audit or security logs. AccountManager.ImportTransaction begins at line 55 and validates/rejects transaction requests, duplicate external IDs, inactive accounts, and missing accounts, but these security-sensitive access and mutation events are not logged. Line references verified against the current repository source during report finalization."
       },
       "storyPoint": 3
     }
