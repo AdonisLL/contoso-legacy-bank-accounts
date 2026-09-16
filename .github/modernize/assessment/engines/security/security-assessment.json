@@ -1,0 +1,60 @@
+{
+  "GeneratedAt": "2026-09-16T04:26:43.425632Z",
+  "ProjectPath": ".",
+  "Summary": {
+    "TotalFindings": 3,
+    "CveCount": 0,
+    "CweCount": 3,
+    "BySeverity": {
+      "mandatory": 0,
+      "optional": 0,
+      "potential": 3
+    },
+    "ByCategory": {
+      "Concurrency & Synchronization": 2,
+      "Credentials & Secrets": 1
+    },
+    "TotalRulesAssessed": 59,
+    "RulesPassed": 56
+  },
+  "CveFindings": [],
+  "CweFindings": [
+    {
+      "Id": "CWE-662",
+      "Name": "Improper Synchronization",
+      "Category": "Concurrency & Synchronization",
+      "Severity": "potential",
+      "StoryPoint": 8,
+      "Description": "The product utilizes multiple threads or processes to allow temporary access to a shared resource that can only be exclusive to one process at a time, but it does not properly synchronize these actions, which might cause simultaneous accesses of this resource by multiple threads or processes.",
+      "Files": [
+        "src/Contoso.LegacyBank.Accounts.Data/AccountData.cs"
+      ],
+      "Explanation": "EfAccountRepository.AddTransaction reads a tracked Account, updates Balance with a read-modify-write operation at line 97, and saves at line 100 without a concurrency token or synchronization. Concurrent requests can overwrite one another and lose a balance update."
+    },
+    {
+      "Id": "CWE-820",
+      "Name": "Missing Synchronization",
+      "Category": "Concurrency & Synchronization",
+      "Severity": "potential",
+      "StoryPoint": 8,
+      "Description": "The product utilizes a shared resource in a concurrent manner but does not attempt to synchronize access to the resource.",
+      "Files": [
+        "src/Contoso.LegacyBank.Accounts.Data/AccountData.cs"
+      ],
+      "Explanation": "EfAccountRepository.AddTransaction reads a tracked Account, updates Balance with a read-modify-write operation at line 97, and saves at line 100 without a concurrency token or synchronization. Concurrent requests can overwrite one another and lose a balance update."
+    },
+    {
+      "Id": "CWE-778",
+      "Name": "Insufficient Logging",
+      "Category": "Credentials & Secrets",
+      "Severity": "potential",
+      "StoryPoint": 3,
+      "Description": "When a security-critical event occurs, the product either does not record the event or omits important details about the event when logging it.",
+      "Files": [
+        "src/Contoso.LegacyBank.Accounts.Business/AccountManager.cs",
+        "src/Contoso.LegacyBank.Accounts.ServiceHost/AccountService.cs"
+      ],
+      "Explanation": "AccountManager.ImportTransaction (lines 55-79) processes and rejects financial transaction requests without recording an audit event, while AccountService.Execute (lines 22-36) converts failures to typed faults without logging them."
+    }
+  ]
+}
