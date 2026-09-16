@@ -19,8 +19,8 @@
 
 ## Cloud Readiness Issues
 
-| Issue Name | Criticality | Story Points | Occurrences |
-|------------|-------------|--------------|-------------|
+| Issue Name | Criticality | Story Points | Files |
+|------------|-------------|--------------|-------|
 | Windows authentication detected | Mandatory | 3 | [2](#Windows_authentication_detected) |
 | Hardcoded URLs detected | Potential | 1 | [2](#Hardcoded_URLs_detected) |
 | SQL database connection detected | Potential | 3 | [2](#SQL_database_connection_detected) |
